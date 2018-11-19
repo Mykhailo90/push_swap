@@ -44,7 +44,7 @@ void	move_from_to(t_str **from, t_str **to)
 void	move_s2_s1(t_str **a, t_str **b, t_help *mstr)
 {
 	move_from_to(&*b, &*a);
-	if (mstr->print == 1)
+	if (mstr->pr == 1)
 		printf("pa\n");
-	mstr->total += 1;
+	mstr->sum += 1;
 }

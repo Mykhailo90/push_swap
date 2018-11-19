@@ -3,12 +3,12 @@
 
 void	start_print(t_help *mstr, int *fd, t_str *a, t_str *b)
 {
-	mstr->add = 1;
+	mstr->plus = 1;
 	if (mstr->input == 1)
 		mstr->read = 1;
-	if (mstr->output == 1)
+	if (mstr->out == 1)
 		print_header(fd, a);
-	if (mstr->print == 0 && mstr->visual == 1 && mstr->add != 0)
+	if (mstr->pr == 0 && mstr->visual == 1 && mstr->plus != 0)
 	{
 		printf("[START]\n ↓@↓@↓@↓@↓@↓@↓@↓@↓");
 		print_separator(a, b, "NULL", *mstr);
@@ -48,13 +48,13 @@ static void	print_concl(t_str *a, int fd, t_help mstr)
 {
 	if (test_sorted(a) && a->value == get_min(a))
 	{
-		if (mstr.output == 1)
+		if (mstr.out == 1)
 			ft_putendl_fd("Values sorted success", fd);
 		printf("OK\n");
 	}
 	else
 	{
-		if (mstr.output == 1)
+		if (mstr.out == 1)
 			ft_putendl_fd("Values not sorted", fd);
 		printf("KO\n");
 	}
@@ -62,14 +62,14 @@ static void	print_concl(t_str *a, int fd, t_help mstr)
 
 int			print_result(t_help mstr, int fd, t_str *a, t_str *b)
 {
-	if (mstr.output == 1)
+	if (mstr.out == 1)
 		ft_putendl_fd("____________", fd);
-	if (mstr.result == 1)
+	if (mstr.res == 1)
 	{
-		printf("Count operations: %d\n", mstr.total);
+		printf("Count operations: %d\n", mstr.sum);
 		printf("___________________________________________\n");
 		ft_putstr_fd("Count operations: ", fd);
-		ft_putnbr_fd(mstr.total, fd);
+		ft_putnbr_fd(mstr.sum, fd);
 		ft_putchar_fd('\n', fd);
 		ft_putendl_fd("__________________________________________", fd);
 	}
@@ -79,20 +79,20 @@ int			print_result(t_help mstr, int fd, t_str *a, t_str *b)
 	return (0);
 }
 
-void	print_a(t_str *ptr, t_str *a, t_help mstr, char const *line)
+void	print_s1(t_str *ptr, t_str *a, t_help mstr, char const *line)
 {
 	while (ptr != NULL)
 	{
-		if (mstr.highlight == 1 && ((ft_strcmp(line, "sa") == 0 &&
+		if (mstr.hl == 1 && ((ft_strcmp(line, "sa") == 0 &&
 			(ptr == a || ptr == a->next)) ||
 			(ft_strcmp(line, "pa") == 0 && ptr == a)))
 			printf("[");
 		printf("%d", ptr->value);
-		if (mstr.highlight == 1 && ((ft_strcmp(line, "sa") == 0 &&
+		if (mstr.hl == 1 && ((ft_strcmp(line, "sa") == 0 &&
 			(ptr == a || ptr == a->next)) ||
 			(ft_strcmp(line, "pa") == 0 && ptr == a)))
 			printf("]");
-		if (mstr.highlight == 1 && ft_strcmp(line, "sa") == 0 &&
+		if (mstr.hl == 1 && ft_strcmp(line, "sa") == 0 &&
 			ptr == a)
 			printf(" ⇔ ");
 		else

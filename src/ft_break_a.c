@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_break_a.c                                       :+:      :+:    :+:   */
+/*   break_s1.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkyslyy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -22,27 +22,27 @@ static void	rotate_s2ack(t_str **a, t_help *mstr)
 			rev_rotate_a(a, mstr);
 }
 
-void		ft_break_a(t_str **a, t_str **b, t_help *mstr, t_str **pivots)
+void		break_s1(t_str **a, t_str **b, t_help *mstr, t_str **base)
 {
 	t_str *aptr;
 	t_str *pivptr;
 
 	aptr = *a;
-	pivptr = *pivots;
-	mstr->pivot = make_new_base(*a, ft_find_next_a(*a, pivptr->value));
+	pivptr = *base;
+	mstr->base = make_new_base(*a, search_next_s1(*a, pivptr->value));
 	mstr->mem = get_last_val(*a);
 	while (aptr->value <= pivptr->value &&
-		ft_is_left_a(*a, pivptr->value, mstr->pivot))
+		left_s1(*a, pivptr->value, mstr->base))
 	{
-		if (aptr->value <= mstr->pivot)
+		if (aptr->value <= mstr->base)
 			move_s1_s2(a, b, mstr);
 		else
 			rotate_s1(a, mstr);
 		aptr = *a;
 	}
-	if (aptr->value <= mstr->pivot)
+	if (aptr->value <= mstr->base)
 		move_s1_s2(a, b, mstr);
 	aptr = *a;
 	rotate_s2ack(a, mstr);
-	add_next(make_node(mstr->pivot), pivots);
+	add_next(make_node(mstr->base), base);
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fast_af_boi.c                                   :+:      :+:    :+:   */
+/*   fast_sor.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkyslyy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -17,33 +17,33 @@ static void	ft_two_or_three(t_str **a, t_str **b, t_help *mstr, t_str *p)
 	t_str *aptr;
 
 	aptr = *a;
-	if (ft_find_size_a(*a, p->value) == 2)
+	if (search_s1_size(*a, p->value) == 2)
 	{
 		if (aptr->value > aptr->next->value)
 			swap_s1(a, mstr);
 	}
-	else if (ft_find_size_a(*a, p->value) == 3)
-		ft_swap_three(a, b, mstr);
+	else if (search_s1_size(*a, p->value) == 3)
+		swap3(a, b, mstr);
 }
 
-void		ft_fast_af_boi(t_str **a, t_str **b, t_help *mstr)
+void		fast_sor(t_str **a, t_str **b, t_help *mstr)
 {
-	t_str	*pivots;
+	t_str	*base;
 
-	pivots = NULL;
-	add_node(make_node(get_min(*a)), &pivots);
-	ft_first_break(a, b, mstr, &pivots);
+	base = NULL;
+	add_node(make_node(get_min(*a)), &base);
+	break1(a, b, mstr, &base);
 	while (get_size(*b) > 150)
 	{
-		ft_break_b(a, b, mstr, &pivots);
-		while (ft_find_size_a(*a, pivots->value) > 3)
-			ft_break_a(a, b, mstr, &pivots);
-		ft_two_or_three(a, b, mstr, pivots);
-		ft_del_node(&pivots);
+		break_s2(a, b, mstr, &base);
+		while (search_s1_size(*a, base->value) > 3)
+			break_s1(a, b, mstr, &base);
+		ft_two_or_three(a, b, mstr, base);
+		del_nodes(&base);
 	}
-	ft_rev_quick_sort(b, a, mstr);
+	rev_sort_q(b, a, mstr);
 	while (*b)
 		flags_with_a(a, b, mstr);
 	final_rotate(a, mstr);
-	free_list(pivots, 0);
+	free_list(base, 0);
 }

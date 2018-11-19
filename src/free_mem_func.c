@@ -26,7 +26,7 @@ int	free_arr(char **nums, int ret)
 	return (ret);
 }
 
-void	ft_del_node(t_str **anc)
+void	del_nodes(t_str **anc)
 {
 	t_str *ptr;
 

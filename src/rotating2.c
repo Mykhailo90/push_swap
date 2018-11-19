@@ -4,8 +4,8 @@
 void	rotate_s2(t_str **b, t_help *mstr)
 {
 	rotate(&*b);
-	mstr->total += 1;
-	if (mstr->print == 1)
+	mstr->sum += 1;
+	if (mstr->pr == 1)
 		printf("rb\n");
 }
 
@@ -13,18 +13,18 @@ void	rotate_both(t_str **a, t_str **b, t_help *mstr)
 {
 	rotate(&*a);
 	rotate(&*b);
-	if (mstr->print == 1)
+	if (mstr->pr == 1)
 		printf("rr\n");
-	mstr->total += 1;
+	mstr->sum += 1;
 }
 
 void	rev_rotate_both(t_str **a, t_str **b, t_help *mstr)
 {
 	rev_rotate(&*a);
 	rev_rotate(&*b);
-	if (mstr->print == 1)
+	if (mstr->pr == 1)
 		printf("rrr\n");
-	mstr->total += 1;
+	mstr->sum += 1;
 }
 
 void	final_rotate(t_str **a, t_help *mstr)

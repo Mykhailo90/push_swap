@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_deal_with_b.c                               :+:      :+:    :+:   */
+/*   rev_s2_d.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkyslyy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -30,7 +30,7 @@ static int	ft_get_big(t_str *b, int val)
 	return (ret);
 }
 
-void		ft_rev_deal_with_b(t_str **b, t_str **a, t_help *mstr)
+void		rev_s2_d(t_str **b, t_str **a, t_help *mstr)
 {
 	t_str *bptr;
 	t_str *aptr;

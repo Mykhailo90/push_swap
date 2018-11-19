@@ -111,7 +111,7 @@ static void	ft_empty_b(t_str **a, t_str **b, t_help *mstr)
 	}
 }
 
-void		ft_insert_swap(t_str **a, t_str **b, t_help *mstr)
+void		swapins(t_str **a, t_str **b, t_help *mstr)
 {
 	t_str *aptr;
 	int		mem;

@@ -7,7 +7,7 @@ void	config(char **argv, int argc, t_help *mstr)
 	while (argc != 1)
 	{
 		if (ft_strcmp(argv[argc - 1], "-i") == 0)
-			mstr->no = 1;
+			mstr->not = 1;
 		argc -= 1;
 	}
 }
@@ -16,14 +16,14 @@ int	pars_inst(t_help *mstr, char **line)
 {
 	if (mstr->input == 1)
 		printf("Instruction: ");
-	mstr->add = get_next_line(mstr->read, line);
+	mstr->plus = get_next_line(mstr->read, line);
 	if (mstr->input == 1 && *line[0] == '\0')
 		printf("\n");
 	if (mstr->input == 1 && !valid_rules(*line))
 		while (!valid_rules(*line))
 		{
 			printf("Please enter valid instruction: ");
-			mstr->add = get_next_line(mstr->read, line);
+			mstr->plus = get_next_line(mstr->read, line);
 		}
 	if (mstr->read == 0 && !valid_rules(*line))
 		return (1);

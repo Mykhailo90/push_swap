@@ -4,25 +4,25 @@
 void	set_base(t_str *a, t_help *mstr)
 {
 	if (get_size(a) <= 20)
-		mstr->pivot = get_base(a, get_size(a) / 2);
+		mstr->base = get_base(a, get_size(a) / 2);
 	else if (get_size(a) <= 50)
-		mstr->pivot = get_base(a, get_size(a) / 2.5);
+		mstr->base = get_base(a, get_size(a) / 2.5);
 	else if (get_size(a) <= 100)
-		mstr->pivot = get_base(a, get_size(a) / 3.5);
+		mstr->base = get_base(a, get_size(a) / 3.5);
 	else if (get_size(a) <= 250)
-		mstr->pivot = get_base(a, get_size(a) / 4);
+		mstr->base = get_base(a, get_size(a) / 4);
 	else if (get_size(a) <= 300)
-		mstr->pivot = get_base(a, get_size(a) / 5.5);
+		mstr->base = get_base(a, get_size(a) / 5.5);
 	else if (get_size(a) <= 350)
-		mstr->pivot = get_base(a, get_size(a) / 6);
+		mstr->base = get_base(a, get_size(a) / 6);
 	else if (get_size(a) <= 400)
-		mstr->pivot = get_base(a, get_size(a) / 6.5);
+		mstr->base = get_base(a, get_size(a) / 6.5);
 	else if (get_size(a) <= 450)
-		mstr->pivot = get_base(a, get_size(a) / 7);
+		mstr->base = get_base(a, get_size(a) / 7);
 	else if (get_size(a) <= 500)
-		mstr->pivot = get_base(a, get_size(a) / 7.5);
+		mstr->base = get_base(a, get_size(a) / 7.5);
 	else
-		mstr->pivot = get_base(a, get_size(a) / 9);
+		mstr->base = get_base(a, get_size(a) / 9);
 }
 
 int	get_base(t_str *a, int val)
@@ -54,25 +54,25 @@ int	get_base(t_str *a, int val)
 void	set_rev_base(t_str *a, t_help *mstr)
 {
 	if (get_size(a) <= 20)
-		mstr->pivot = get_rev_base(a, get_size(a) / 2);
+		mstr->base = get_rev_base(a, get_size(a) / 2);
 	else if (get_size(a) <= 50)
-		mstr->pivot = get_rev_base(a, get_size(a) / 2.5);
+		mstr->base = get_rev_base(a, get_size(a) / 2.5);
 	else if (get_size(a) <= 100)
-		mstr->pivot = get_rev_base(a, get_size(a) / 3.5);
+		mstr->base = get_rev_base(a, get_size(a) / 3.5);
 	else if (get_size(a) <= 250)
-		mstr->pivot = get_rev_base(a, get_size(a) / 4);
+		mstr->base = get_rev_base(a, get_size(a) / 4);
 	else if (get_size(a) <= 300)
-		mstr->pivot = get_rev_base(a, get_size(a) / 5.5);
+		mstr->base = get_rev_base(a, get_size(a) / 5.5);
 	else if (get_size(a) <= 350)
-		mstr->pivot = get_rev_base(a, get_size(a) / 6);
+		mstr->base = get_rev_base(a, get_size(a) / 6);
 	else if (get_size(a) <= 400)
-		mstr->pivot = get_rev_base(a, get_size(a) / 6.5);
+		mstr->base = get_rev_base(a, get_size(a) / 6.5);
 	else if (get_size(a) <= 450)
-		mstr->pivot = get_rev_base(a, get_size(a) / 7);
+		mstr->base = get_rev_base(a, get_size(a) / 7);
 	else if (get_size(a) <= 500)
-		mstr->pivot = get_rev_base(a, get_size(a) / 7.5);
+		mstr->base = get_rev_base(a, get_size(a) / 7.5);
 	else
-		mstr->pivot = get_rev_base(a, get_size(a) / 9);
+		mstr->base = get_rev_base(a, get_size(a) / 9);
 }
 
 int	get_rev_base(t_str *a, int val)

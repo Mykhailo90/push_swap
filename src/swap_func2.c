@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_three.c                                    :+:      :+:    :+:   */
+/*   swap3.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkyslyy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -72,15 +72,15 @@ static void	ft_for_312_213(t_str **a, t_str **b, t_help *mstr, int max)
 	}
 }
 
-void		ft_swap_three(t_str **a, t_str **b, t_help *mstr)
+void		swap3(t_str **a, t_str **b, t_help *mstr)
 {
 	t_str *ptr;
 	int		min;
 	int		max;
 
 	ptr = *a;
-	min = ft_min(*a);
-	max = ft_max(*a);
+	min = min_s(*a);
+	max = max_s(*a);
 	if (ptr->value > ptr->next->value ||
 		ptr->next->value > ptr->next->next->value)
 	{

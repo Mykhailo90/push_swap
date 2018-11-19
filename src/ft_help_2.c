@@ -1,7 +1,7 @@
 
 #include "../swaplib.h"
 
-int		ft_min(t_str *a)
+int		min_s(t_str *a)
 {
 	int		ret;
 	int		count;
@@ -20,7 +20,7 @@ int		ft_min(t_str *a)
 	return (ret);
 }
 
-int		ft_max(t_str *a)
+int		max_s(t_str *a)
 {
 	int		ret;
 	int		count;
@@ -39,30 +39,30 @@ int		ft_max(t_str *a)
 	return (ret);
 }
 
-int		ft_is_left(t_str *stack, int end, int pivot, int mem)
+int		left_check(t_str *stack, int end, int base, int mem)
 {
 	t_str *ptr;
 
 	ptr = stack;
-	if (mem <= pivot && mem > end)
+	if (mem <= base && mem > end)
 		return (1);
 	while (ptr->value >= end)
 	{
-		if (ptr->value >= pivot)
+		if (ptr->value >= base)
 			return (1);
 		ptr = ptr->next;
 	}
 	return (0);
 }
 
-int		ft_is_left_a(t_str *stack, int end, int pivot)
+int		left_s1(t_str *stack, int end, int base)
 {
 	t_str *ptr;
 
 	ptr = stack;
 	while (ptr->value <= end)
 	{
-		if (ptr->value <= pivot)
+		if (ptr->value <= base)
 			return (1);
 		ptr = ptr->next;
 	}

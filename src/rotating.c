@@ -25,24 +25,24 @@ void	rev_rotate(t_str **anc)
 void	rev_rotate_a(t_str **a, t_help *mstr)
 {
 	rev_rotate(&*a);
-	if (mstr->print == 1)
+	if (mstr->pr == 1)
 		printf("rra\n");
-	mstr->total += 1;
+	mstr->sum += 1;
 }
 
 void	rev_rotate_b(t_str **b, t_help *mstr)
 {
 	rev_rotate(&*b);
-	if (mstr->print == 1)
+	if (mstr->pr == 1)
 		printf("rrb\n");
-	mstr->total += 1;
+	mstr->sum += 1;
 }
 
 void	rotate_s1(t_str **a, t_help *mstr)
 {
 	rotate(&*a);
-	mstr->total += 1;
-	if (mstr->print == 1)
+	mstr->sum += 1;
+	if (mstr->pr == 1)
 		printf("ra\n");
 }
 

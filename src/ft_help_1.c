@@ -12,14 +12,14 @@
 
 #include "../swaplib.h"
 
-int	ft_find_size(t_str *b, int pivot)
+int	search_size(t_str *b, int base)
 {
 	int		ret;
 	t_str	*ptr;
 
 	ret = 0;
 	ptr = b;
-	while (ptr->next && ptr->value >= pivot)
+	while (ptr->next && ptr->value >= base)
 	{
 		ret += 1;
 		ptr = ptr->next;
@@ -27,14 +27,14 @@ int	ft_find_size(t_str *b, int pivot)
 	return (ret);
 }
 
-int	ft_find_size_a(t_str *a, int pivot)
+int	search_s1_size(t_str *a, int base)
 {
 	int		ret;
 	t_str	*ptr;
 
 	ret = 0;
 	ptr = a;
-	while (ptr->next && ptr->value <= pivot)
+	while (ptr->next && ptr->value <= base)
 	{
 		ret += 1;
 		ptr = ptr->next;
@@ -42,22 +42,22 @@ int	ft_find_size_a(t_str *a, int pivot)
 	return (ret);
 }
 
-int	ft_find_next(t_str *b, int pivot)
+int	next_search(t_str *b, int base)
 {
 	t_str *ptr;
 
 	ptr = b;
-	while (ptr->next && ptr->value >= pivot)
+	while (ptr->next && ptr->value >= base)
 		ptr = ptr->next;
 	return (ptr->value);
 }
 
-int	ft_find_next_a(t_str *a, int pivot)
+int	search_next_s1(t_str *a, int base)
 {
 	t_str *ptr;
 
 	ptr = a;
-	while (ptr->next && ptr->value < pivot)
+	while (ptr->next && ptr->value < base)
 		ptr = ptr->next;
 	return (ptr->value);
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_quick_sort.c                                    :+:      :+:    :+:   */
+/*   sort_q.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkyslyy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -36,7 +36,7 @@ static void	ft_pall(t_str **a, t_str **b, t_help *p)
 	t_str *bp;
 
 	int		(*f_b)(t_str *b, int val);
-	int		(*f_g)(t_str *node, int mem, int pivot);
+	int		(*f_g)(t_str *node, int mem, int base);
 
 	ap = *a;
 	bp = *b;
@@ -45,13 +45,13 @@ static void	ft_pall(t_str **a, t_str **b, t_help *p)
 	
 	while (ap->value != p->mem)
 	{
-		if (ap->value <= p->pivot)
+		if (ap->value <= p->base)
 			flags_with_b(b, a, p);
 		else
 		{
-			if (bp != NULL && vallet(ap, p->mem, p->pivot) &&
-				rotating(bp, f_b(bp, f_g(ap, p->mem, p->pivot))) == 1
-				&& bp->value != f_b(bp, f_g(ap, p->mem, p->pivot)))
+			if (bp != NULL && vallet(ap, p->mem, p->base) &&
+				rotating(bp, f_b(bp, f_g(ap, p->mem, p->base))) == 1
+				&& bp->value != f_b(bp, f_g(ap, p->mem, p->base)))
 				rotate_both(a, b, p);
 			else
 				rotate_s1(a, p);
@@ -81,7 +81,7 @@ static void	ft_shmatochok(t_str **a, t_str **b, t_help *mstr)
 	bptr = *a;
 }
 
-void		ft_quick_sort(t_str **a, t_str **b, t_help *mstr)
+void		sort_q(t_str **a, t_str **b, t_help *mstr)
 {
 	t_str *aptr;
 
@@ -94,7 +94,7 @@ void		ft_quick_sort(t_str **a, t_str **b, t_help *mstr)
 		aptr = *a;
 		ft_pall(a, b, mstr);
 		aptr = *a;
-		if (aptr->value <= mstr->pivot)
+		if (aptr->value <= mstr->base)
 			flags_with_b(b, a, mstr);
 		ft_shmatochok(a, b, mstr);
 		aptr = *a;

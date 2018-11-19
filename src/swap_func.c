@@ -21,23 +21,23 @@ void	swap_both(t_str **a, t_str **b, t_help *mstr)
 {
 	swap_f_t(&*a);
 	swap_f_t(&*b);
-	mstr->total += 1;
-	if (mstr->print == 1)
+	mstr->sum += 1;
+	if (mstr->pr == 1)
 		printf("ss\n");
 }
 
 void	swap_s2(t_str **b, t_help *mstr)
 {
 	swap_f_t(&*b);
-	mstr->total += 1;
-	if (mstr->print == 1)
+	mstr->sum += 1;
+	if (mstr->pr == 1)
 		printf("sb\n");
 }
 
 void	swap_s1(t_str **a, t_help *mstr)
 {
 	swap_f_t(&*a);
-	mstr->total += 1;
-	if (mstr->print == 1)
+	mstr->sum += 1;
+	if (mstr->pr == 1)
 		printf("sa\n");
 }

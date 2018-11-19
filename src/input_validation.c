@@ -4,14 +4,14 @@
 static void	flags(t_help *mstr, char *num, char **fname)
 {
 	if (ft_strcmp(num, "-o") == 0)
-		mstr->output = 1;
+		mstr->out = 1;
 	if (ft_strcmp(num, "-h") == 0)
-		mstr->highlight = 1;
+		mstr->hl = 1;
 	if (ft_strcmp(num, "-v") == 0)
 		mstr->visual = 1;
 	if (ft_strcmp(num, "-t") == 0)
-		mstr->result = 1;
-	if (ft_strcmp(num, "-r") == 0 && mstr->no != 1)
+		mstr->res = 1;
+	if (ft_strcmp(num, "-r") == 0 && mstr->not != 1)
 	{
 		printf("Enter instructions file name: ");
 		while (get_next_line(1, fname) != 1)
@@ -69,7 +69,7 @@ int			input_validation(char **x, t_help *mstr)
 			return (0);
 		if (ft_strcmp(x[ptr], "-v") == 0 || ft_strcmp(x[ptr], "-o") == 0 ||
 			ft_strcmp(x[ptr], "-t") == 0 || ft_strcmp(x[ptr], "-h") == 0 ||
-			(ft_strcmp(x[ptr], "-r") == 0 && mstr->no != 1) ||
+			(ft_strcmp(x[ptr], "-r") == 0 && mstr->not != 1) ||
 			ft_strcmp(x[ptr], "-i") == 0)
 		{
 			flags(mstr, x[ptr], &fname);
