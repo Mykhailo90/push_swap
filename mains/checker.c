@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msarapii <msarapii@student.unit.ua>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/19 20:02:25 by msarapii          #+#    #+#             */
+/*   Updated: 2018/11/19 20:02:38 by msarapii         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swaplib.h"
 
-int	build_st(t_str **a, t_help *mstr, char **argv, int argc)
+int				build_st(t_str **a, t_help *mstr, char **argv, int argc)
 {
-	char	**nums;
+	char		**nums;
 
 	mstr->plus = 0;
 	nums = ft_strsplit(argv[argc - 1], ' ');
@@ -26,13 +37,13 @@ int	build_st(t_str **a, t_help *mstr, char **argv, int argc)
 	return (free_arr(nums, 0));
 }
 
-int			main(int argc, char **argv)
+int				main(int argc, char **argv)
 {
-	t_str	*a;
-	t_str	*b;
-	char	*line;
-	t_help	mstr;
-	int		fd;
+	t_str		*a;
+	t_str		*b;
+	char		*line;
+	t_help		mstr;
+	int			fd;
 
 	initialize(&mstr, &a, &b, &fd);
 	config(argv, argc, &mstr);
@@ -46,7 +57,7 @@ int			main(int argc, char **argv)
 	{
 		if (pars_inst(&mstr, &line))
 			return (pars_error(argc));
-		ft_apply(line, &a, &b, &mstr);
+		init(line, &a, &b, &mstr);
 		stack_visual(mstr, line, a, b);
 		if (mstr.out == 1 && ft_strlen(line))
 			ft_putendl_fd(line, fd);

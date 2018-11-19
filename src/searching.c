@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   searching.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msarapii <msarapii@student.unit.ua>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/19 20:52:07 by msarapii          #+#    #+#             */
+/*   Updated: 2018/11/19 20:52:09 by msarapii         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swaplib.h"
 
-int	get_large(t_str *anc)
+int				get_large(t_str *anc)
 {
-	t_str 	*ptr;
-	int		max;
+	t_str		*ptr;
+	int			max;
 
 	ptr = anc;
 	max = ptr->value;
@@ -17,10 +28,10 @@ int	get_large(t_str *anc)
 	return (max);
 }
 
-int	get_max(t_str *b, int val)
+int				get_max(t_str *b, int val)
 {
-	t_str 	*ptr;
-	int		res;
+	t_str		*ptr;
+	int			res;
 
 	if (val < get_min(b))
 		return (get_large(b));
@@ -35,10 +46,10 @@ int	get_max(t_str *b, int val)
 	return (res);
 }
 
-int		get_size(t_str *a)
+int				get_size(t_str *a)
 {
-	t_str	*ptr;
-	int		size;
+	t_str		*ptr;
+	int			size;
 
 	ptr = a;
 	size = 0;
@@ -50,10 +61,10 @@ int		get_size(t_str *a)
 	return (size);
 }
 
-int	get_last_val(t_str *anc)
+int				get_last_val(t_str *anc)
 {
-	int		res;
-	t_str 	*ptr;
+	int			res;
+	t_str		*ptr;
 
 	ptr = anc;
 	while (ptr->next != NULL)
@@ -62,10 +73,10 @@ int	get_last_val(t_str *anc)
 	return (res);
 }
 
-int	get_min(t_str *anc)
+int				get_min(t_str *anc)
 {
-	t_str 	*ptr;
-	int		min;
+	t_str		*ptr;
+	int			min;
 
 	ptr = anc;
 	min = ptr->value;

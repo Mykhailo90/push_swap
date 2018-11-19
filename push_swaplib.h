@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swaplib.h                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msarapii <msarapii@student.unit.ua>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/19 20:01:58 by msarapii          #+#    #+#             */
+/*   Updated: 2018/11/19 20:02:03 by msarapii         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAPLIB_H
 # define PUSH_SWAPLIB_H
@@ -44,7 +55,7 @@ void				fast_sor(t_str **a, t_str **b, t_help *mstr);
 int					free_arr(char **nums, int res);
 void				final_rotate(t_str **a, t_help *mstr);
 void				free_list(t_str *a, t_str *b);
-void				ft_apply(char *line, t_str **a, t_str **b, t_help *mstr);
+void				init(char *line, t_str **a, t_str **b, t_help *mstr);
 void				flags_with_a(t_str **a, t_str **b, t_help *mstr);
 void				flags_with_b(t_str **b, t_str **a, t_help *mstr);
 int					get_rev_base(t_str *a, int val);
@@ -78,6 +89,7 @@ void				print_s2(t_str *ptr, t_str *b, t_help mstr,
 								char const *line);
 void				print_separator(t_str *a, t_str *b, char const *line,
 								t_help mstr);
+void				palling(t_str **a, t_str **b, t_help *p);
 void				rev_rotate(t_str **anc);
 void				rotate(t_str **anc);
 void				rotate_s1(t_str **a, t_help *mstr);

@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test_func.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msarapii <msarapii@student.unit.ua>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/19 20:54:16 by msarapii          #+#    #+#             */
+/*   Updated: 2018/11/19 20:54:17 by msarapii         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swaplib.h"
 
-int	test_sorted(t_str *anc)
+int				test_sorted(t_str *anc)
 {
-	t_str   *ptr;
-	int		min;
+	t_str		*ptr;
+	int			min;
 
 	ptr = anc;
 	min = ptr->value;
@@ -28,12 +39,12 @@ int	test_sorted(t_str *anc)
 	return (1);
 }
 
-int	test_swap(t_str *anc)
+int				test_swap(t_str *anc)
 {
-	int		big;
-	int		little;
-	int		last;
-	t_str	*ptr;
+	int			big;
+	int			little;
+	int			last;
+	t_str		*ptr;
 
 	big = anc->value;
 	little = anc->next->value;

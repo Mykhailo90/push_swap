@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   help3.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msarapii <msarapii@student.unit.ua>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/19 20:45:42 by msarapii          #+#    #+#             */
+/*   Updated: 2018/11/19 20:45:45 by msarapii         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swaplib.h"
 
-void	move_s1_s2(t_str **a, t_str **b, t_help *mstr)
+void			move_s1_s2(t_str **a, t_str **b, t_help *mstr)
 {
 	move_from_to(&*a, &*b);
 	if (mstr->pr == 1)
@@ -9,19 +20,19 @@ void	move_s1_s2(t_str **a, t_str **b, t_help *mstr)
 	mstr->sum += 1;
 }
 
-int	unique_check(t_str *a)
+int				unique_check(t_str *a)
 {
-	t_str *ptr;
-	int		mem;
+	t_str		*ptr;
+	int			x;
 
 	while (a != NULL)
 	{
-		mem = a->value;
+		x = a->value;
 		ptr = a;
 		while (ptr != NULL)
 		{
 			ptr = ptr->next;
-			if (ptr != NULL && ptr->value == mem)
+			if (ptr != NULL && ptr->value == x)
 				return (0);
 		}
 		a = a->next;
@@ -29,7 +40,7 @@ int	unique_check(t_str *a)
 	return (1);
 }
 
-void	ft_apply(char *line, t_str **a, t_str **b, t_help *mstr)
+void			init(char *line, t_str **a, t_str **b, t_help *mstr)
 {
 	if (ft_strcmp(line, "sa") == 0)
 		swap_s1(a, mstr);
@@ -55,12 +66,11 @@ void	ft_apply(char *line, t_str **a, t_str **b, t_help *mstr)
 		rev_rotate_both(a, b, mstr);
 }
 
-void	initialize(t_help *mstr, t_str **a, t_str **b, int *fd)
+void			initialize(t_help *mstr, t_str **a, t_str **b, int *fd)
 {
 	*a = NULL;
 	*b = NULL;
 	*fd = -1;
-	
 	mstr->hl = 0;
 	mstr->input = 0;
 	mstr->not = 0;

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotating2.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msarapii <msarapii@student.unit.ua>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/19 20:51:50 by msarapii          #+#    #+#             */
+/*   Updated: 2018/11/19 20:51:51 by msarapii         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swaplib.h"
 
@@ -29,19 +40,19 @@ void	rev_rotate_both(t_str **a, t_str **b, t_help *mstr)
 
 void	final_rotate(t_str **a, t_help *mstr)
 {
-	t_str *aptr;
+	t_str *ppt;
 
-	aptr = *a;
-	if (rotating(aptr, get_min(aptr)) == 1)
-		while (aptr->value != get_min(aptr))
+	ppt = *a;
+	if (rotating(ppt, get_min(ppt)) == 1)
+		while (ppt->value != get_min(ppt))
 		{
 			rotate_s1(a, mstr);
-			aptr = *a;
+			ppt = *a;
 		}
 	else
-		while (aptr->value != get_min(aptr))
+		while (ppt->value != get_min(ppt))
 		{
 			rev_rotate_a(a, mstr);
-			aptr = *a;
+			ppt = *a;
 		}
 }

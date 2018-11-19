@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   settings.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msarapii <msarapii@student.unit.ua>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/19 20:52:38 by msarapii          #+#    #+#             */
+/*   Updated: 2018/11/19 20:52:41 by msarapii         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swaplib.h"
 
-void	set_base(t_str *a, t_help *mstr)
+void		set_base(t_str *a, t_help *mstr)
 {
 	if (get_size(a) <= 20)
 		mstr->base = get_base(a, get_size(a) / 2);
@@ -25,7 +36,7 @@ void	set_base(t_str *a, t_help *mstr)
 		mstr->base = get_base(a, get_size(a) / 9);
 }
 
-int	get_base(t_str *a, int val)
+int			get_base(t_str *a, int val)
 {
 	int		x;
 	int		res;
@@ -51,7 +62,7 @@ int	get_base(t_str *a, int val)
 	return (res);
 }
 
-void	set_rev_base(t_str *a, t_help *mstr)
+void		set_rev_base(t_str *a, t_help *mstr)
 {
 	if (get_size(a) <= 20)
 		mstr->base = get_rev_base(a, get_size(a) / 2);
@@ -75,7 +86,7 @@ void	set_rev_base(t_str *a, t_help *mstr)
 		mstr->base = get_rev_base(a, get_size(a) / 9);
 }
 
-int	get_rev_base(t_str *a, int val)
+int			get_rev_base(t_str *a, int val)
 {
 	int		mem;
 	int		ret;

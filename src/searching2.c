@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   searching2.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msarapii <msarapii@student.unit.ua>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/19 20:52:22 by msarapii          #+#    #+#             */
+/*   Updated: 2018/11/19 20:52:24 by msarapii         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swaplib.h"
 
@@ -21,7 +32,7 @@ static t_str	*ft_search(t_str *ptr, t_str *anc, int *help)
 
 int				search_unsort(t_str *anc, int min, int max, int *mem)
 {
-	t_str 		*ptr;
+	t_str		*ptr;
 	int			help;
 	int			size;
 

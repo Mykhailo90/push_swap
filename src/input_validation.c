@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   input_validation.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msarapii <msarapii@student.unit.ua>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/19 20:49:40 by msarapii          #+#    #+#             */
+/*   Updated: 2018/11/19 20:49:42 by msarapii         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swaplib.h"
 
@@ -47,12 +58,10 @@ static int	check_symb(char **x, size_t ptr)
 	s = 0;
 	while (x[ptr][y] != '\0')
 	{
-		if (x[ptr][y] == '-' || x[ptr][y] == '+'){
+		if (x[ptr][y] == '-' || x[ptr][y] == '+')
 			s += 1;
-		}			
-		if (!search_o(x, y++, ptr) || s > 1){
+		if (!search_o(x, y++, ptr) || s > 1)
 			return (0);
-		}
 	}
 	return (1);
 }

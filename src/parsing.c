@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msarapii <msarapii@student.unit.ua>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/19 20:50:15 by msarapii          #+#    #+#             */
+/*   Updated: 2018/11/19 20:50:16 by msarapii         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swaplib.h"
 
-void	config(char **argv, int argc, t_help *mstr)
+void		config(char **argv, int argc, t_help *mstr)
 {
 	mstr->ac = argc;
 	while (argc != 1)
@@ -12,7 +23,7 @@ void	config(char **argv, int argc, t_help *mstr)
 	}
 }
 
-int	pars_inst(t_help *mstr, char **line)
+int			pars_inst(t_help *mstr, char **line)
 {
 	if (mstr->input == 1)
 		printf("Instruction: ");
@@ -35,7 +46,7 @@ int	pars_inst(t_help *mstr, char **line)
 	return (0);
 }
 
-int	valid_rules(char *line)
+int			valid_rules(char *line)
 {
 	if (ft_strcmp(line, "sa") != 0 && ft_strcmp(line, "sb") != 0 &&
 		ft_strcmp(line, "rrr") != 0 && ft_strcmp(line, "pa") != 0 &&
@@ -47,7 +58,7 @@ int	valid_rules(char *line)
 	return (1);
 }
 
-int	pars_error(int argc)
+int			pars_error(int argc)
 {
 	if (argc > 1)
 		ft_putendl_fd("Error", 2);

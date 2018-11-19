@@ -1,47 +1,58 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   flags_behavior.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msarapii <msarapii@student.unit.ua>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/19 20:10:05 by msarapii          #+#    #+#             */
+/*   Updated: 2018/11/19 20:10:07 by msarapii         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swaplib.h"
 
 void		flags_with_a(t_str **a, t_str **b, t_help *mstr)
 {
-	t_str   *bptr;
-	t_str   *aptr;
+	t_str	*bptr;
+	t_str	*ppt;
 
 	bptr = *b;
-	aptr = *a;
-	if (aptr != NULL &&
-		rotating(aptr, get_bigs(aptr, bptr->value)) == 1)
-		while (aptr->value != get_bigs(aptr, bptr->value))
+	ppt = *a;
+	if (ppt != NULL &&
+		rotating(ppt, get_bigs(ppt, bptr->value)) == 1)
+		while (ppt->value != get_bigs(ppt, bptr->value))
 		{
 			rotate_s1(a, mstr);
-			aptr = *a;
+			ppt = *a;
 		}
 	else
-		while (aptr != NULL &&
-			aptr->value != get_bigs(aptr, bptr->value))
+		while (ppt != NULL &&
+			ppt->value != get_bigs(ppt, bptr->value))
 		{
 			rev_rotate_a(a, mstr);
-			aptr = *a;
+			ppt = *a;
 		}
 	move_s2_s1(a, b, mstr);
 }
 
-void	flags_with_b(t_str **b, t_str **a, t_help *mstr)
+void		flags_with_b(t_str **b, t_str **a, t_help *mstr)
 {
-	t_str *bptr;
-	t_str *aptr;
+	t_str	*bptr;
+	t_str	*ppt;
 
 	bptr = *b;
-	aptr = *a;
+	ppt = *a;
 	if (bptr != NULL &&
-		rotating(bptr, get_max(bptr, aptr->value)) == 1)
-		while (bptr->value != get_max(bptr, aptr->value))
+		rotating(bptr, get_max(bptr, ppt->value)) == 1)
+		while (bptr->value != get_max(bptr, ppt->value))
 		{
 			rotate_s2(b, mstr);
 			bptr = *b;
 		}
 	else
 		while (bptr != NULL &&
-			bptr->value != get_max(bptr, aptr->value))
+			bptr->value != get_max(bptr, ppt->value))
 		{
 			rev_rotate_b(b, mstr);
 			bptr = *b;
@@ -49,7 +60,7 @@ void	flags_with_b(t_str **b, t_str **a, t_help *mstr)
 	move_s1_s2(a, b, mstr);
 }
 
-int	rotating(t_str *anc, int to_find)
+int			rotating(t_str *anc, int to_find)
 {
 	t_str	*ptr;
 	int		size;

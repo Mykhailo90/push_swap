@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msarapii <msarapii@student.unit.ua>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/19 20:02:50 by msarapii          #+#    #+#             */
+/*   Updated: 2018/11/19 20:02:52 by msarapii         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swaplib.h"
 
-void	rotate_swap(t_str **a, t_help *mstr)
+void		rotate_swap(t_str **a, t_help *mstr)
 {
-	t_str *ptr;
+	t_str	*ptr;
 
 	ptr = *a;
 	if (!test_sorted(ptr))
@@ -50,7 +61,7 @@ int			build_st(t_str **a, t_help *mstr, char **argv, int argc)
 
 int			unique(t_str *a)
 {
-	t_str 	*ptr;
+	t_str	*ptr;
 	int		x;
 
 	while (a != NULL)

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   printing3.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msarapii <msarapii@student.unit.ua>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/19 20:51:14 by msarapii          #+#    #+#             */
+/*   Updated: 2018/11/19 20:51:16 by msarapii         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swaplib.h"
 
@@ -69,7 +80,7 @@ static void	ft_after_b(t_help mstr, char const *line)
 
 void		print_separator(t_str *a, t_str *b, char const *l, t_help mstr)
 {
-	t_str 	*ptr;
+	t_str	*ptr;
 
 	ptr = a;
 	printf("\n");

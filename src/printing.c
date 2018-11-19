@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   printing.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msarapii <msarapii@student.unit.ua>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/19 20:50:50 by msarapii          #+#    #+#             */
+/*   Updated: 2018/11/19 20:50:53 by msarapii         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swaplib.h"
 
-void	start_print(t_help *mstr, int *fd, t_str *a, t_str *b)
+void			start_print(t_help *mstr, int *fd, t_str *a, t_str *b)
 {
 	mstr->plus = 1;
 	if (mstr->input == 1)
@@ -15,7 +26,7 @@ void	start_print(t_help *mstr, int *fd, t_str *a, t_str *b)
 	}
 }
 
-void	print_header(int *fd, t_str *a)
+void			print_header(int *fd, t_str *a)
 {
 	*fd = creat("log.txt", S_IRUSR | S_IWUSR);
 	ft_putendl_fd("________________________________________________", *fd);
@@ -44,7 +55,7 @@ void	print_header(int *fd, t_str *a)
 	ft_putendl_fd("________", *fd);
 }
 
-static void	print_concl(t_str *a, int fd, t_help mstr)
+static void		print_concl(t_str *a, int fd, t_help mstr)
 {
 	if (test_sorted(a) && a->value == get_min(a))
 	{
@@ -60,7 +71,7 @@ static void	print_concl(t_str *a, int fd, t_help mstr)
 	}
 }
 
-int			print_result(t_help mstr, int fd, t_str *a, t_str *b)
+int				print_result(t_help mstr, int fd, t_str *a, t_str *b)
 {
 	if (mstr.out == 1)
 		ft_putendl_fd("____________", fd);
@@ -79,7 +90,7 @@ int			print_result(t_help mstr, int fd, t_str *a, t_str *b)
 	return (0);
 }
 
-void	print_s1(t_str *ptr, t_str *a, t_help mstr, char const *line)
+void			print_s1(t_str *ptr, t_str *a, t_help mstr, char const *line)
 {
 	while (ptr != NULL)
 	{

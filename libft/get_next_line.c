@@ -15,7 +15,7 @@
 
 int					check_line(char *line)
 {
-	size_t	n;
+	size_t			n;
 
 	n = 0;
 	while (line[n] != '\0')
@@ -26,9 +26,9 @@ int					check_line(char *line)
 
 int					ft_get_line(t_line *ptr)
 {
-	char	*tmp;
-	char	*buf;
-	int		end;
+	char			*tmp;
+	char			*buf;
+	int				end;
 
 	if (ptr->sline == NULL)
 		ptr->sline = ft_strnew(0);
@@ -53,9 +53,9 @@ int					ft_get_line(t_line *ptr)
 	return (1);
 }
 
-t_line			**make_list(void)
+t_line				**make_list(void)
 {
-	t_line		**res;
+	t_line			**res;
 
 	res = (t_line**)malloc(sizeof(t_line*));
 	*res = NULL;

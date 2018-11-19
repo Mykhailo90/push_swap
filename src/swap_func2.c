@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap_func2.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msarapii <msarapii@student.unit.ua>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/19 20:54:02 by msarapii          #+#    #+#             */
+/*   Updated: 2018/11/19 20:54:03 by msarapii         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swaplib.h"
 
@@ -63,7 +74,7 @@ static void	ft_for_312_213(t_str **a, t_str **b, t_help *mstr, int max)
 
 void		swap3(t_str **a, t_str **b, t_help *mstr)
 {
-	t_str *ptr;
+	t_str	*ptr;
 	int		min;
 	int		max;
 
