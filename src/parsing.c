@@ -1,5 +1,5 @@
 
-#include "../swaplib.h"
+#include "../push_swaplib.h"
 
 void	config(char **argv, int argc, t_help *mstr)
 {

@@ -1,6 +1,6 @@
 
-#ifndef SWAPLIB_H
-# define SWAPLIB_H
+#ifndef PUSH_SWAPLIB_H
+# define PUSH_SWAPLIB_H
 
 # include "./libft/libft.h"
 
@@ -37,12 +37,14 @@ void				break_s2(t_str **a, t_str **b, t_help *mstr,
 								t_str **base);
 void				break_s1(t_str **a, t_str **b, t_help *mstr,
 								t_str **base);
+int					build_st(t_str **a, t_help *mstr, char **argv, int argc);
 void				config(char **argv, int argc, t_help *mstr);
 void				del_nodes(t_str **anc);
 void				fast_sor(t_str **a, t_str **b, t_help *mstr);
 int					free_arr(char **nums, int res);
 void				final_rotate(t_str **a, t_help *mstr);
 void				free_list(t_str *a, t_str *b);
+void				ft_apply(char *line, t_str **a, t_str **b, t_help *mstr);
 void				flags_with_a(t_str **a, t_str **b, t_help *mstr);
 void				flags_with_b(t_str **b, t_str **a, t_help *mstr);
 int					get_rev_base(t_str *a, int val);

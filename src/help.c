@@ -1,5 +1,5 @@
 
-#include "../swaplib.h"
+#include "../push_swaplib.h"
 
 void	add_next(t_str *new, t_str **anc)
 {

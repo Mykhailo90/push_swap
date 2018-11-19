@@ -1,7 +1,7 @@
 
-#include "../swaplib.h"
+#include "../push_swaplib.h"
 
-void	ft_swap_rotate(t_str **a, t_help *mstr)
+void	rotate_swap(t_str **a, t_help *mstr)
 {
 	t_str *ptr;
 
@@ -86,7 +86,7 @@ int			main(int argc, char **argv)
 	if (argc < 2 || get_size(a) == 0 || !unique(a))
 		return (pars_error(argc));
 	if (get_size(a) <= 3)
-		ft_swap_rotate(&a, &mstr);
+		rotate_swap(&a, &mstr);
 	else if (get_size(a) <= 10)
 		swapins(&a, &b, &mstr);
 	else if (get_size(a) <= 100)

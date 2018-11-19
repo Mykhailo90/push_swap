@@ -1,5 +1,5 @@
 
-#include "../swaplib.h"
+#include "../push_swaplib.h"
 
 static t_str	*ft_search(t_str *ptr, t_str *anc, int *help)
 {

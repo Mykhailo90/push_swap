@@ -1,5 +1,5 @@
 
-#include "../swaplib.h"
+#include "../push_swaplib.h"
 
 static void	flags(t_help *mstr, char *num, char **fname)
 {

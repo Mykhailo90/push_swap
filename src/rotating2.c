@@ -1,5 +1,5 @@
 
-#include "../swaplib.h"
+#include "../push_swaplib.h"
 
 void	rotate_s2(t_str **b, t_help *mstr)
 {

@@ -1,5 +1,5 @@
 
-#include "../swaplib.h"
+#include "../push_swaplib.h"
 
 void	sorting(t_str **a, t_str **b, t_help *mstr)
 {

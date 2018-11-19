@@ -1,5 +1,5 @@
 
-#include "../swaplib.h"
+#include "../push_swaplib.h"
 
 void	start_print(t_help *mstr, int *fd, t_str *a, t_str *b)
 {
