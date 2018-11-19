@@ -2,7 +2,7 @@ PROGRAMS = push_swap checker
 SRC = ./src/
 POINT = ./mains/
 ALLS = $(shell ls $(SRC) | grep -E ".+\.c")
-INC = ./swaplib.h
+INC = ./
 OBJ = ./obj/
 OBJECTS = $(addprefix $(OBJ), $(ALLS:.c=.o))
 LIB = ./libft/
@@ -18,7 +18,7 @@ $(OBJ):
 	@ mkdir obj
 
 $(OBJ)%.o:$(POINT)%.c
-	@ $(CC) $(CFLAGS) -I$(LIBINC) -I$(INC) -o $@ -c $<
+	@ $(CC) $(CFLAGS) -I $(LIBINC) -I $(INC) -o $@ -c $<
 
 $(OBJ)%.o:$(SRC)%.c
 	@ $(CC) $(CFLAGS) -I$(LIBINC) -I$(INC) -o $@ -c $<

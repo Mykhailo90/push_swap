@@ -14,9 +14,6 @@
 
 
 
-
-
-
 static void	ft_pall(t_str **a, t_str **b, t_help *p)
 {
 	t_str *ap;
@@ -49,10 +46,8 @@ static void	ft_pall(t_str **a, t_str **b, t_help *p)
 void		ft_rev_quick_sort(t_str **a, t_str **b, t_help *mstr)
 {
 	t_str *aptr;
-	t_str *bptr;
 
 	aptr = *a;
-	bptr = *b;
 	while (aptr != NULL && !test_sorted(aptr))
 	{
 		set_rev_base(aptr, mstr);
@@ -61,10 +56,8 @@ void		ft_rev_quick_sort(t_str **a, t_str **b, t_help *mstr)
 		aptr = *a;
 		ft_pall(a, b, mstr);
 		aptr = *a;
-		bptr = *b;
 		if (aptr->value >= mstr->pivot)
 			ft_rev_deal_with_b(b, a, mstr);
 		aptr = *a;
-		bptr = *b;
 	}
 }

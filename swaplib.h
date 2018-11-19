@@ -116,5 +116,7 @@ int					ft_is_left_a(t_str *stack, int end, int pivot);
 void				ft_swap_three(t_str **a, t_str **b, t_help *mstr);
 void				ft_rev_quick_sort(t_str **b, t_str **a, t_help *mstr);
 void				ft_rev_deal_with_b(t_str **a, t_str **b, t_help *mstr);
-
+int					get_bigs(t_str *b, int val);
+void				set_rev_base(t_str *a, t_help *mstr);
+int					get_rev_base(t_str *a, int val);
 #endif

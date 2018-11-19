@@ -42,5 +42,6 @@ int				search_unsort(t_str *anc, int min, int max, int *mem)
 	*mem = ptr->value;
 	if (size - help < size / 2)
 		return (2);
+	min = max;
 	return (1);
 }

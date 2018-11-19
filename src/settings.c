@@ -51,7 +51,7 @@ int	get_base(t_str *a, int val)
 	return (res);
 }
 
-static void	set_rev_base(t_str *a, t_help *mstr)
+void	set_rev_base(t_str *a, t_help *mstr)
 {
 	if (get_size(a) <= 20)
 		mstr->pivot = get_rev_base(a, get_size(a) / 2);
@@ -75,7 +75,7 @@ static void	set_rev_base(t_str *a, t_help *mstr)
 		mstr->pivot = get_rev_base(a, get_size(a) / 9);
 }
 
-static int	get_rev_base(t_str *a, int val)
+int	get_rev_base(t_str *a, int val)
 {
 	int		mem;
 	int		ret;

@@ -34,10 +34,8 @@ static void	ft_get_to_unsorted(t_str **a, int *mem, t_help *mstr)
 static void	ft_if_max(t_str **a, t_str **b, t_help *mstr)
 {
 	t_str *aptr;
-	t_str *bptr;
 
 	aptr = *a;
-	bptr = *b;
 	if (aptr->next->next->value == get_min(aptr) &&
 		aptr->next->value > get_last_val(aptr))
 		swap_s1(a, mstr);
@@ -54,7 +52,6 @@ static void	ft_if_max(t_str **a, t_str **b, t_help *mstr)
 		{
 			move_s1_s2(a, b, mstr);
 			aptr = *a;
-			bptr = *b;
 		}
 	}
 	aptr = *a;
@@ -63,10 +60,8 @@ static void	ft_if_max(t_str **a, t_str **b, t_help *mstr)
 static void	ft_for_no_max(t_str **a, t_str **b, t_help *mstr, int mem)
 {
 	t_str *aptr;
-	t_str *bptr;
 
 	aptr = *a;
-	bptr = *b;
 	if (aptr->value < aptr->next->next->value &&
 		(aptr->next->value > get_last_val(aptr) ||
 			(aptr->next->value == get_min(aptr) &&
@@ -83,7 +78,6 @@ static void	ft_for_no_max(t_str **a, t_str **b, t_help *mstr, int mem)
 		{
 			move_s1_s2(a, b, mstr);
 			aptr = *a;
-			bptr = *b;
 		}
 	}
 }
@@ -120,11 +114,9 @@ static void	ft_empty_b(t_str **a, t_str **b, t_help *mstr)
 void		ft_insert_swap(t_str **a, t_str **b, t_help *mstr)
 {
 	t_str *aptr;
-	t_str	*bptr;
 	int		mem;
 
 	aptr = *a;
-	bptr = *b;
 	while (!test_sorted(aptr))
 	{
 		ft_get_to_unsorted(a, &mem, mstr);

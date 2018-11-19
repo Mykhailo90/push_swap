@@ -61,13 +61,11 @@ static int	max_part(t_str *a, int tx)
 
 int			make_new_base(t_str *a, int tx)
 {
-	int		size;
 	int		count;
 	int		res;
 	int		x;
 	t_str	*ptr;
 
-	size = size_of_part(a, tx);
 	count = 0;
 	ptr = a;
 	x = min_part(a, tx);

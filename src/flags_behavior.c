@@ -1,23 +1,23 @@
 
 #include "../swaplib.h"
 
-static int	get_bigs(t_str *b, int val)
-{
-	t_str   *ptr;
-	int		ret;
+// static int	get_bigs(t_str *b, int val)
+// {
+// 	t_str   *ptr;
+// 	int		ret;
 
-	if (val > get_large(b))
-		return (get_min(b));
-	ptr = b;
-	ret = get_large(b);
-	while (ptr != NULL)
-	{
-		if (ptr->value < ret && ptr->value > val)
-			ret = ptr->value;
-		ptr = ptr->next;
-	}
-	return (ret);
-}
+// 	if (val > get_large(b))
+// 		return (get_min(b));
+// 	ptr = b;
+// 	ret = get_large(b);
+// 	while (ptr != NULL)
+// 	{
+// 		if (ptr->value < ret && ptr->value > val)
+// 			ret = ptr->value;
+// 		ptr = ptr->next;
+// 	}
+// 	return (ret);
+// }
 
 void		flags_with_a(t_str **a, t_str **b, t_help *mstr)
 {

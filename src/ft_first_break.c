@@ -23,15 +23,12 @@ static void	ft_loop_single(t_str **a, t_str **b, t_str *aptr, t_help *p)
 static void	ft_p_or_r_a(t_str **a, t_str **b, t_help *mstr)
 {
 	t_str *aptr;
-	t_str *bptr;
 
 	aptr = *a;
-	bptr = *b;
 	while (aptr->value != mstr->mem)
 	{
 		ft_loop_single(a, b, aptr, mstr);
 		aptr = *a;
-		bptr = *b;
 	}
 	ft_loop_single(a, b, aptr, mstr);
 }
@@ -39,17 +36,14 @@ static void	ft_p_or_r_a(t_str **a, t_str **b, t_help *mstr)
 void		ft_first_break(t_str **a, t_str **b, t_help *mstr, t_str **p)
 {
 	t_str *aptr;
-	t_str	*bptr;
 
 	aptr = *a;
-	bptr = *b;
 	while (!test_sorted(*a))
 	{
 		mstr->pivot = get_base(*a, get_size(*a) / 2);
 		mstr->mem = get_last_val(*a);
 		ft_p_or_r_a(a, b, mstr);
 		aptr = *a;
-		bptr = *b;
 		add_node(make_node(get_min(*a)), p);
 	}
 	while (aptr->value != get_min(*a))

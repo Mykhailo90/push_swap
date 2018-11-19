@@ -53,12 +53,8 @@ static void	ft_p_or_r_b(t_str **a, t_str **b, t_help *mstr, t_str *pivptr)
 
 void		ft_break_b(t_str **a, t_str **b, t_help *mstr, t_str **pivots)
 {
-	t_str *aptr;
-	t_str *bptr;
 	t_str *pivptr;
 
-	aptr = *a;
-	bptr = *b;
 	pivptr = *pivots;
 	mstr->mem = get_last_val(*b);
 	if (ft_find_size(*b, pivptr->next->value) > 3)
@@ -71,8 +67,6 @@ void		ft_break_b(t_str **a, t_str **b, t_help *mstr, t_str **pivots)
 		else
 			while (get_last_val(*b) != mstr->mem)
 				rev_rotate_b(b, mstr);
-		aptr = *a;
-		bptr = *b;
 		add_next(make_node(mstr->pivot), pivots);
 	}
 	else

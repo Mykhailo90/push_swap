@@ -25,11 +25,9 @@ static void	rotate_s2ack(t_str **a, t_help *mstr)
 void		ft_break_a(t_str **a, t_str **b, t_help *mstr, t_str **pivots)
 {
 	t_str *aptr;
-	t_str *bptr;
 	t_str *pivptr;
 
 	aptr = *a;
-	bptr = *b;
 	pivptr = *pivots;
 	mstr->pivot = make_new_base(*a, ft_find_next_a(*a, pivptr->value));
 	mstr->mem = get_last_val(*a);
@@ -41,12 +39,10 @@ void		ft_break_a(t_str **a, t_str **b, t_help *mstr, t_str **pivots)
 		else
 			rotate_s1(a, mstr);
 		aptr = *a;
-		bptr = *b;
 	}
 	if (aptr->value <= mstr->pivot)
 		move_s1_s2(a, b, mstr);
 	aptr = *a;
-	bptr = *b;
 	rotate_s2ack(a, mstr);
 	add_next(make_node(mstr->pivot), pivots);
 }
